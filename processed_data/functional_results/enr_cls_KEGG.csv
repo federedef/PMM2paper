@@ -1,0 +1,2 @@
+Cluster	ID	Description	GeneRatio	BgRatio	RichFactor	FoldEnrichment	zScore	pvalue	p.adjust	qvalue	geneID	Count
+Dim.1	hsa03410	Base excision repair	2/10	44/8577	0.0454545454545455	38.9863636363636	8.63040526063544	0.00112762042373376	0.0383390944069477	0.0225524084746751	PARP1/POLD2	2
