@@ -9,7 +9,6 @@
 
 source ~soft_bio_267/initializes/init_degenes_hunter
 source ~soft_bio_267/initializes/init_python
-export PATH=~/aprendiendo/ExpHunterSuite/inst/scripts/:$PATH
 
 head -n 1 phenotypes.txt | tr "\t" "\n"|semtools -i - -O HPO --list_translate names | cut -f 2 | tr "\n" "\t" | sed -r 's/\t$/\n/g' > phenotypes_n.txt
 tail -n +2 phenotypes.txt >> phenotypes_n.txt
