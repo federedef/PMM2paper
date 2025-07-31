@@ -1,0 +1,11 @@
+a1	a2
+P10_H_4	p.Arg141His	p.Tyr64Cys
+P11_H_5	p.Phe207Ser	p.Glu139Lys
+P12_H_6	p.Pro113Leu	p.Thr237Lys
+P8_H_2	p.Arg141His	p.Thr237Met
+P9_H_3	p.Arg141His	p.Asp65Tyr
+P1_L_1	p.Thr237Met	p.Thr237Met
+P2_L_2	c.256-1G>T	p.Leu32Arg
+P3_L_3	p.Arg141His	p.Cys241Ser
+P4_L_4	p.Arg141His	p.Leu32Arg
+P5_L_5	c.523+3A>G	p.Arg162Trp

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import argparse
+import os
 
 def parse_table(file):
     """
@@ -12,9 +13,14 @@ def parse_table(file):
             if i == 0: 
                 i += 1
                 continue
-            print("jajaja")
             line = line.strip().split()
             gene = line[0]
+            if "ENSG" not in gene: continue
+            # var_type = line[1]
+            # if var_type != "quantitative": continue
+            # metric_type = line[2]
+            # if metric_type != "correlation": continue
+            # if "hsa-miR" in gene or 
             metric = line[4]
             pvalue = line[5]
             dim = line[3]
@@ -29,11 +35,9 @@ def get_top_table(table, top=10):
     Get the top table from a list of tables.
     """
     parse_list = [] 
-    top_data = sorted(table, key=lambda x: float(x[1]))
-    bottop_data = sorted(table, key=lambda x: float(x[1]), reverse=True)
+    top_data = sorted(table, key=lambda x: -abs(float(x[1])))
     # select top from one parte and bottom from the other
     parse_list.extend([line[0] for line in top_data[:top]])
-    parse_list.extend([line[0] for line in bottop_data[:top]])
     return parse_list
 
 
@@ -46,7 +50,7 @@ for file in options.files:
     dim2parse = parse_table(file)
     print(dim2parse)
     dim2write = {}
-    with open(file+"_"+"dim2gene", 'w') as f:
+    with open("parsed"+"_"+os.path.basename(file), 'w') as f:
         for dim, table in dim2parse.items():
             parse_list = get_top_table(table)
             f.write(f"{dim}"+"\t"+",".join(parse_list)+"\n")
